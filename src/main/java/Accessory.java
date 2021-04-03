@@ -22,5 +22,4 @@ public class Accessory extends Item {
     public TypeOfInstrument getInstrument() {
         return instrument;
     }
-
 }
