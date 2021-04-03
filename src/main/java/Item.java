@@ -7,7 +7,7 @@ public abstract class Item implements Sellable {
     public Item(double wholesaleCost, double markup) {
         this.wholesaleCost = wholesaleCost;
         this.markup = markup;
-        this.retailPrice = wholesaleCost * markup;
+        this.retailPrice = wholesaleCost + (wholesaleCost * markup);
     }
 
 
@@ -17,7 +17,7 @@ public abstract class Item implements Sellable {
 
     public void setWholesaleCost(double wholesaleCost) {
         this.wholesaleCost = wholesaleCost;
-        this.retailPrice = wholesaleCost * markup;
+        this.retailPrice = wholesaleCost + (wholesaleCost * markup);
     }
 
     public double getMarkup() {
@@ -26,16 +26,14 @@ public abstract class Item implements Sellable {
 
     public void setMarkup(double markup) {
         this.markup = markup;
-        this.retailPrice = wholesaleCost * markup;
+        this.retailPrice = wholesaleCost + (wholesaleCost * markup);
     }
 
     public double getRetailPrice() {
         return retailPrice;
     }
 
-//    public abstract double calculateRetailPriceFromMarkup(double newMarkup);
-//
-//    public abstract double calculateRetailPriceFromWholesalePrice(double newWholesalePrice);
-
-
+    public void setRetailPrice(double newRetailPrice) {
+        setMarkup((newRetailPrice - wholesaleCost) / wholesaleCost);
+    }
 }

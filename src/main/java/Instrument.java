@@ -9,7 +9,6 @@ public abstract class Instrument extends Item implements Playable{
         this.model = model;
     }
 
-
     public String getBrand() {
         return brand;
     }

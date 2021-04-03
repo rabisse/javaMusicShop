@@ -1,7 +1,15 @@
 public interface Sellable {
 
-    double calculateRetailPriceFromMarkup(double newMarkup);
+    double getWholesaleCost();
 
-    double calculateRetailPriceFromWholesalePrice(double newWholesalePrice);
+    void setWholesaleCost(double newWholesaleCost);
+
+    double getMarkup();
+
+    void setMarkup(double newMarkup);
+
+    double getRetailPrice();
+
+    void setRetailPrice(double newRetailPrice);
 
 }
