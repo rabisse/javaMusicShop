@@ -5,7 +5,7 @@ public class Accessory extends Item {
     private TypeOfInstrument instrument;
 
     public Accessory(double wholesaleCost, String name, String brand, TypeOfInstrument instrument) {
-        super(wholesaleCost, 50);
+        super(wholesaleCost, 0.50);
         this.name = name;
         this.brand = brand;
         this.instrument = instrument;
