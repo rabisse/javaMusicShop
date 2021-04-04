@@ -12,4 +12,6 @@ public interface Sellable {
 
     void setRetailPrice(double newRetailPrice);
 
+    double getPotentialProfit();
+
 }

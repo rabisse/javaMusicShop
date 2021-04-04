@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Shop {
 
     private ArrayList<Sellable> stock;
+    private double totalProfit;
 
     public Shop() {
         this.stock = new ArrayList<Sellable>();
@@ -20,6 +21,11 @@ public class Shop {
         this.stock.remove(item);
     }
 
-
-
+    public double getTotalPotentialProfit() {
+        this.totalProfit = 0;
+        stock.forEach(item -> {
+            this.totalProfit += item.getPotentialProfit();
+        });
+        return totalProfit;
+    }
 }

@@ -39,4 +39,9 @@ public class AccessoryTest {
         ukeString.setRetailPrice(18);
         assertEquals(0.80, ukeString.getMarkup(), 0.0);
     }
+
+    @Test
+    public void canGetPotentialProfit() {
+        assertEquals(5, ukeString.getPotentialProfit(), 0.0);
+    }
 }

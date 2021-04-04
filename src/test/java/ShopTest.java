@@ -11,7 +11,6 @@ public class ShopTest {
     private Ukulele ukulele;
     private Accessory ukeString;
 
-
     @Before
     public void before() {
         this.shop = new Shop();
@@ -33,5 +32,20 @@ public class ShopTest {
         assertEquals(2, shop.stockCount());
     }
 
+    @Test
+    public void canRemoveItemFromStock() {
+        shop.addItemToStock(vuvuzela);
+        shop.addItemToStock(ukeString);
+        shop.removeItemFromStock(ukeString);
+        assertEquals(1, shop.stockCount());
+    }
 
+    @Test
+    public void canGetTotalPotentialProfit() {
+        shop.addItemToStock(vuvuzela);
+        shop.addItemToStock(triangle);
+        shop.addItemToStock(ukulele);
+        shop.addItemToStock(ukeString);
+        assertEquals(365, shop.getTotalPotentialProfit(), 0.0);
+    }
 }

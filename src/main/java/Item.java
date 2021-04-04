@@ -10,7 +10,6 @@ public abstract class Item implements Sellable {
         this.retailPrice = wholesaleCost + (wholesaleCost * markup);
     }
 
-
     public double getWholesaleCost() {
         return wholesaleCost;
     }
@@ -35,5 +34,9 @@ public abstract class Item implements Sellable {
 
     public void setRetailPrice(double newRetailPrice) {
         setMarkup((newRetailPrice - wholesaleCost) / wholesaleCost);
+    }
+
+    public double getPotentialProfit() {
+        return retailPrice - wholesaleCost;
     }
 }
